@@ -1,4 +1,4 @@
-let contador = 0;
+let cont = 0;
 let temporizadorError = null;
 
 const contador = document.getElementById("contador");
@@ -9,21 +9,21 @@ const down = document.getElementById("down");
 const reset = document.getElementById("reset");
 
 function actualizarContador() {
-    contadorHTML.textContent = contador;
+    contador.textContent = cont;
 }
 
 up.addEventListener("click", function () {
-    contador++;
+    cont++;
     actualizarContador();
 
-    if (contador > 10) {
+    if (cont > 10) {
         alert("El contador ha superado el valor 10");
     }
 });
 
-up.addEventListener("click", function () {
-    if (contador > 0) {
-        contador--;
+down.addEventListener("click", function () {
+    if (cont > 0) {
+        cont--;
         actualizarContador();
     } else {
         mostrarError();
@@ -31,7 +31,7 @@ up.addEventListener("click", function () {
 });
 
 reset.addEventListener("click", function () {
-    contador = 0;
+    cont = 0;
     actualizarContador();
 });
 
